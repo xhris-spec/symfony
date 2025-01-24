@@ -1,0 +1,44 @@
+{
+    "files.exclude": {
+        "**/.git": true,
+        "**/var": true,
+        "**/vendor": true,
+        "**/bin": true,
+        "symfony.lock": true,
+        ".gitignore": true,
+        "composer.lock": true,
+        "yarn.lock": true,
+        "package-lock.json": true,
+        "**/.vscode": true,
+        "**/node_modules": true,
+        "**/*~": true,
+        "**/~**~": true
+    },
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.formatOnSave": true
+    },
+    "[scss]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.formatOnSave": true
+    },
+    "[php]": {
+        "editor.defaultFormatter": "junstyle.php-cs-fixer",
+        "editor.formatOnSave": true
+    },
+    "git.autofetch": false,
+    "git.postCommitCommand": "sync",
+    "git.enableSmartCommit": true,
+    "git.confirmSync": false,
+    "git.decorations.enabled": true,
+    "files.trimTrailingWhitespace": true,
+    "phpstan.memoryLimit": "2G",
+    "phpstan.level": "max",
+    "phpstan.configuration": "phpstan.neon",
+    "php-cs-fixer.executablePath": "${extensionPath}/php-cs-fixer.phar",
+    "php-cs-fixer.onsave": true,
+    "php-cs-fixer.config": ".php-cs-fixer.dist.php",
+    "php-cs-fixer.documentFormattingProvider": true,
+    "php-cs-fixer.allowRisky": true,
+    "php-cs-fixer.exclude": ["**/Entity/*"]
+}

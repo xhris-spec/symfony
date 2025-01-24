@@ -1,0 +1,31 @@
+{% block image_preview_widget %}
+    <div class="admin-image-preview" id="image_preview_widget_{{ id }}">
+        {% if image is not empty %}
+             {% include "admin/image-preview-content.html.twig" with { 'image': image  } %}
+        {% else %}
+            No se ha seleccionado imagen.
+        {% endif %}
+    </div>
+    {{ block("sonata_type_model_list_widget") }}
+    {% block javascripts %}
+        <script>
+            var val_{{ id }} = {{ image is not empty ? image.id : -1 }};
+            $('#{{ id }}').on('change', function() {
+                const mediaId = $('#{{ id }}').val();
+
+                $.ajax({
+                    url: "{{ url('image-preview', {'element_id': id}) }}/" + mediaId,
+                    type: 'get',
+                    success: function(response) {
+                        console.log(response);
+                        $('#image_preview_widget_{{ id }}').html(response.html);
+                    }
+                });
+
+
+                val_{{ id }} = mediaId;
+            })
+
+        </script>
+    {% endblock javascripts %}
+{% endblock %}

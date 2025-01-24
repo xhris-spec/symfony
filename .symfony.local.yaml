@@ -1,0 +1,11 @@
+http:
+    document_root: public/
+    passthru: index.php
+    port: 8003
+    allow_http: true
+    no_tls: true
+    daemon: false
+    use_gzip: true
+
+workers:
+    yarn_encore_watch: ~

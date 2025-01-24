@@ -1,0 +1,16 @@
+{
+  "champion": {
+    "description": "Champion description",
+    "position": "Role",
+    "abilities": "Abilities"
+  },
+  "button": {
+    "hide_video": "Hide video",
+    "show_video": "Show video",
+    "details": "View Details"
+  },
+  "error": {
+    "not_found": "Champion not found",
+    "exception": "An error has ocurred"
+  }
+}

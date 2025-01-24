@@ -1,0 +1,24 @@
+includes:
+    - vendor/phpstan/phpstan-doctrine/extension.neon
+    - vendor/phpstan/phpstan-symfony/extension.neon
+    - vendor/phpstan/phpstan-doctrine/rules.neon
+    - vendor/phpstan/phpstan-symfony/rules.neon
+
+parameters:
+    level: max
+    paths:
+        - src
+        - tests
+
+    ignoreErrors:
+        # false positive: `TranslationInterface does not know about FieldTranslation::getValue().` Skip this error.
+        -
+           message: '#Call to an undefined method Knp\\DoctrineBehaviors\\Contract\\Entity\\TranslationInterface#'
+           path: %currentWorkingDirectory%/src/*
+
+services:
+	-
+		class: App\PHPStan\Reflection\TranslationsMethodsClassExtension
+		tags:
+			- phpstan.broker.methodsClassReflectionExtension
+

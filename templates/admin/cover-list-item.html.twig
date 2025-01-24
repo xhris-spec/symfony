@@ -1,0 +1,15 @@
+{% extends '@SonataAdmin/CRUD/base_list_field.html.twig' %}
+{% block field %}
+    <div>
+        {% if object.splashart != null %}
+            <img
+                src="{{ sonata_path(object.splashart, 'medium') }}"
+                width="90"
+                height="90"
+                style="min-width: 50px"
+            />
+        {% else %}
+            <span>No tiene splashart</span>
+        {% endif %}
+    </div>
+{% endblock %}

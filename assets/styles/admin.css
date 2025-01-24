@@ -1,0 +1,248 @@
+@import url(https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&display=swap);
+:root {
+  --color-primary: #d1363a;
+  --color-secondary: #252423;
+  --color-tertiary: #d1363a;
+}
+body {
+  background-color: var(--color-primary);
+  font-family: Nunito, sans-serif;
+}
+.dropdown-menu,
+.form-control,
+.info-box-text,
+.progress-description,
+.select2-container--bootstrap .select2-selection,
+.treeview-menu > li > a,
+body,
+table.sonata-ba-list {
+  font-size: 16px;
+}
+.btn-link,
+a {
+  color: #202124;
+}
+a:focus,
+a:hover {
+  color: #000;
+}
+.skin-black .left-side,
+.skin-black .main-sidebar,
+.skin-black .wrapper {
+  background-color: var(--color-primary);
+}
+.skin-black .sidebar a {
+  color: #fff;
+}
+.treeview-menu > li > a > .fa,
+.treeview-menu > li > a > .glyphicon,
+.treeview-menu > li > a > .ion {
+  font-size: 12px;
+}
+.skin-black .sidebar-form .btn,
+.skin-black .sidebar-form input[type="text"] {
+  background-color: #fff;
+}
+.skin-black .sidebar-menu > li.active > a,
+.skin-black .sidebar-menu > li.menu-open > a,
+.skin-black .sidebar-menu > li:hover > a {
+  background: var(--color-secondary);
+  color: #fff;
+}
+.skin-black .sidebar-menu > li > .treeview-menu {
+  background: var(--color-tertiary);
+}
+.skin-black .sidebar-menu .treeview-menu > li.active > a,
+.skin-black .sidebar-menu .treeview-menu > li > a:hover {
+  color: #160000 !important;
+}
+.skin-black .sidebar-menu .treeview-menu > li > a {
+  color: #fff !important;
+}
+.sonata-ba-list-field-header-batch {
+  width: 40px !important;
+}
+.box.box-primary,
+.nav-tabs-custom > .nav-tabs > li.active {
+  border-top-color: var(--color-primary);
+}
+.skin-black .sidebar-menu .treeview-menu > li > a {
+  color: #000;
+}
+.form-control {
+  border-radius: 4px;
+}
+.form-control:focus {
+  border-color: var(--color-primary);
+  box-shadow: inset 0 1px 1px rgb(0 0 0/8%), 0 0 8px #b3b3b3;
+}
+.alert-info,
+.bg-aqua,
+.bg-light-blue,
+.callout.callout-info,
+.label-info,
+.label-primary,
+.modal-info .modal-body,
+.modal-primary .modal-body {
+  background-color: var(--color-primary) !important;
+}
+.btn-primary,
+.btn-primary.focus,
+.btn-primary:focus,
+.btn-success {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary) !important;
+  color: #fff !important;
+}
+.btn-info:hover,
+.btn-primary.hover,
+.btn-primary:active,
+.btn-primary:hover,
+.btn-success.hover,
+.btn-success:active,
+.btn-success:hover {
+  background-color: var(--color-secondary) !important;
+  border-color: var(--color-secondary) !important;
+}
+.login-page,
+.register-page {
+  background: var(--color-primary);
+}
+.login-logo a,
+.register-logo a {
+  color: #fff;
+}
+.login-logo img {
+  width: 200px !important;
+}
+.login-logo span {
+  display: none;
+}
+.login-box-body,
+.register-box-body {
+  background: #fff;
+  border-radius: 10px;
+  padding: 20px 40px !important;
+}
+.login-box-body a,
+.login-box-body label,
+.login-box-body p {
+  color: #000;
+}
+.logo img {
+  max-width: 100% !important;
+}
+.login-page .btn-flat,
+.register-page .btn-flat {
+  border-radius: 8px;
+  font-size: 16px;
+}
+.skin-black .sidebar-form {
+  background-color: var(--color-tertiary);
+  border: 0;
+  border-radius: 0;
+  margin: 0;
+  padding: 10px;
+}
+.box {
+  border-top: 3px solid var(--color-primary);
+}
+.sidebar p.small {
+  border: 0 !important;
+}
+.pagination > .active > a,
+.pagination > .active > a:focus,
+.pagination > .active > a:hover,
+.pagination > .active > span,
+.pagination > .active > span:focus,
+.pagination > .active > span:hover {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+  color: #fff;
+}
+.col-no-header .box-header {
+  display: none;
+}
+.sonata-ba-action.btn:not(:hover) {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+  color: #fff;
+}
+.skin-black .main-header .logo,
+.skin-black .main-header .logo:hover {
+  background-color: var(--color-primary);
+  border-color: transparent !important;
+}
+.skin-black .sidebar-menu > li.active > a {
+  border-left-color: transparent;
+}
+.skin-black .main-header .logo {
+  color: #fff;
+}
+.a2lix_translations .nav-tabs {
+  border-bottom: 0 !important;
+}
+ul.a2lix_translationsLocales li a {
+  background: #d1363a !important;
+  border: 1px solid #d1363a!important;
+  color: #fff !important;
+  display: block;
+  font-size: 18px;
+  font-weight: 700;
+  padding: 5px 15px;
+  text-decoration: none;
+  z-index: 999;
+}
+ul.a2lix_translationsLocales li.active a,
+ul.a2lix_translationsLocales li.active a:focus {
+  background: #fff !important;
+  border-bottom: 1px solid #fff !important;
+  color: #d1363a !important;
+}
+div.a2lix_translationsFields {
+  top: -1px !important;
+}
+div.a2lix_translationsFields > div {
+  border: 1px solid #d1363a !important;
+  border-radius: 0 5px 5px 5px;
+  display: none;
+  margin-right: 5px;
+  padding: 30px 15px;
+}
+.admin-image-preview + .field-container .field-short-description {
+  display: none;
+  max-width: 650px;
+  width: calc(100% - 200px) !important;
+}
+.field-actions a.btn,
+.field-actions button.btn {
+  background-color: #d1363a !important;
+  border-color: #d1363a !important;
+}
+.field-actions a.btn:hover,
+.field-actions button.btn:hover {
+  background-color: #085072 !important;
+  border-color: #085072 !important;
+}
+.field-actions a.btn-danger:hover,
+.field-actions button.btn-danger:hover {
+  background-color: red !important;
+  border-color: red !important;
+}
+.field-container .field-actions a.btn,
+.field-container .field-actions button.btn {
+  font-size: 0 !important;
+}
+.field-container .field-actions a.btn i.fa,
+.field-container .field-actions a.btn i.fas,
+.field-container .field-actions button.btn i.fa,
+.field-container .field-actions button.btn i.fas {
+  color: #fff;
+  font-size: 16px !important;
+}
+.field-container .field-actions a.btn-danger:hover i.fa,
+.field-container .field-actions a.btn-danger:hover i.fas,
+.field-container .field-actions button.btn-danger:hover i.fa,
+.field-container .field-actions button.btn-danger:hover i.fas {
+  color: #fff;
+}

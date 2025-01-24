@@ -1,0 +1,39 @@
+sonata_media:
+    class:
+        media: App\Entity\Sonata\Media
+        gallery: App\Entity\Sonata\Gallery
+        gallery_item: App\Entity\Sonata\GalleryItem
+    default_context: default
+    db_driver: doctrine_orm
+    contexts:
+        default:
+            providers:
+                - sonata.media.provider.image
+                - sonata.media.provider.file
+
+            formats:
+                small: { width: 100, quality: 90, constraint: false }
+                medium: { width: 200, quality: 90, constraint: false }
+                big: { width: 500, quality: 90, constraint: false }
+
+
+    cdn:
+        server:
+            path: /upload/media
+
+    filesystem:
+        local:
+            # El directorio de carga debe ser escribible
+            directory: "%kernel.project_dir%/public/upload/media"
+            create: false
+
+
+    providers:
+        file:
+            thumbnail: sonata.media.thumbnail.format
+            allowed_extensions: ['pdf', 'txt', 'rtf', 'doc', 'docx', 'xls', 'xlsx', 'ppt', 'pttx', 'odt', 'odg', 'odp', 'ods', 'odc', 'odf', 'odb', 'csv', 'xml', 'mp4', 'zip', 'msi', 'tar', 'gz', 'xdd', 'esi', 'eds', 'step', 'epub']
+            allowed_mime_types: ['application/pdf', 'application/x-pdf', 'application/rtf', 'text/html', 'text/rtf', 'text/plain', 'video/mp4', 'application/zip', 'application/msi', 'application/x-msi', 'application/gzip', 'application/x-gzip', 'application/xdd', 'application/x-xdd', 'application/esi', 'application/x-esi', 'application/octet-stream', 'application/xml', 'application/epub+zip', 'application/vnd.ms-excel', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet']
+        image:
+            resizer: sonata.media.resizer.square
+            allowed_extensions: ['jpg', 'png', 'jpeg', 'gif']
+            allowed_mime_types: ['image/pjpeg', 'image/jpeg', 'image/png', 'image/x-png', 'image/gif']

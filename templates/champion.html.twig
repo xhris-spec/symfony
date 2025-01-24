@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block current_page %}champions
+{% endblock %}
+{% block meta_title %}Champions
+{% endblock %}
+{% block body %}
+	<div class="container mt-5">
+		<div class="row gy-5">
+			<div class="col-md-4">
+				<img class="img-fluid" src="{{ sonata_path(champion.splashart, 'big') }}">
+			</div>
+			<div class="col-md-6">
+				<h1 class="text-white text-uppercase">{{ champion.name }}</h1>
+				<div class="text-white">{{ champion.description }}</div>
+				<a href="https://u.gg/lol/champions/{{champion.name}}/build" target="_blank" class="text-white">U.GG</a>
+			</div>
+		</div>
+		<h2 class="text-center text-white my-5">Habilidades</h2>
+		<div class="row gy-5 row-cols-1 row-cols-sm-2 row-cols-xl-4 justify-content-center">
+			{% for hability in champion.habilities %}
+				<div class="col">
+					<div class="text-center">
+						<img class="img-fluid mb-3" src="{{ sonata_path(hability.image, 'big') }}" alt="{{ hability.name }}">
+						<p class="text-white text-uppercase">{{ hability.name }}</p>
+						<div class="text-white">{{ hability.description|raw }}</div>
+						{% if hability.video is not empty %}
+							<a href="{{ sonata_path(hability.video, 'reference') }}" data-fancybox="video-gallery" data-caption="{{ hability.name }}">
+								<button class="btn btn-primary mt-3">{{'button.show_video'|trans}}</button>
+							</a>
+						{% endif %}
+					</div>
+				</div>
+			{% endfor %}
+		</div>
+
+
+	</div>
+
+{% endblock %}
+                                

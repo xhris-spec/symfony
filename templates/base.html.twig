@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>
+            {{ block('meta_title') is defined ? block('meta_title') ~ ' | Campeones LOL, Agentes, Estadísticas' : 'Campeones LOL, Agentes, Estadísticas' }}
+        </title>
+        <link rel="icon" type="image/png" href="/images/favicon.png" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap"
+            rel="stylesheet"
+        />
+        {% block stylesheets %}
+        {{
+            encore_entry_link_tags("app")
+        }}
+        {% endblock %}
+    </head>
+    <body>
+        {% include 'partials/header.html.twig' %}
+
+        <main>
+            {% block body %}{% endblock %}
+        </main>
+
+        {% include 'partials/footer_light.html.twig' %}
+
+        {% block javascripts %}{{ encore_entry_script_tags("app") }}{% endblock %}
+    </body>
+</html>

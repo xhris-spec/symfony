@@ -1,0 +1,36 @@
+sonata_admin:
+
+    title: 'Admin portal'
+    title_logo: /images/logo.svg
+    security:
+        handler: sonata.admin.security.handler.role
+
+        role_admin: ROLE_ADMIN
+        role_super_admin: ROLE_SUPER_ADMIN
+    
+    templates:
+        layout: 'admin/standard_layout.html.twig'
+    
+    options:
+        logo_content: 'icon' # text, icon or all
+        default_admin_route: edit
+
+    
+
+    dashboard:
+        blocks:
+            -
+                position: top
+                class: col-lg-12 col-sm-12 col-md-12
+                type: sonata.block.service.text
+                settings:
+                    content: >
+                        <h2 class="admin-dashboard">Administración</h2>
+            -
+                position: center
+                type: sonata.admin.block.admin_list
+
+sonata_block:
+    blocks:
+        sonata.admin.block.admin_list:
+            contexts: [admin]

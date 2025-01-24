@@ -1,0 +1,14 @@
+{% extends "@SonataAdmin/standard_layout.html.twig" %}
+
+{% block stylesheets %}
+	{{ parent() }}
+    <title>Página de Administración</title>
+	<link rel="icon" type="image/png" href="/images/favicon.png">
+	{{ encore_entry_link_tags('admin') }}
+{% endblock %}
+
+{% block javascripts %}
+	{{ parent() }}
+	{{ encore_entry_script_tags('admin') }} 
+
+{% endblock %}

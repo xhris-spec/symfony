@@ -1,0 +1,17 @@
+<div class="card bg-dark">
+  <div class="ratio ratio-1x1">
+    <img
+      [src]="champion.splashart"
+      [alt]="champion.name"
+      class="card-img-top object-fit-cover"
+      style="object-position: top"
+    />
+  </div>
+  <div class="card-body">
+    <h2 class="card-title text-white">{{ champion.name }}</h2>
+    <a
+      [routerLink]="['/', champion.slug]"
+      class="btn btn-primary stretched-link" translate="button.details"
+    ></a>
+  </div>
+</div>

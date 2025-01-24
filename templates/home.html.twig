@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block current_page %}home
+{% endblock %}
+
+{% block meta_title %}Home
+{% endblock %}
+
+{% block body %}
+
+	<div class="container">
+		<div class="row mt-0 gy-3 gy-sm-5 row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xxl-5 align-items-center justify-content-center">
+			{% for champion in champions|sort %}
+				<div class="col">
+					<div class="card bg-dark">
+                        <div class="ratio ratio-1x1">
+                            <img src="{{ sonata_path(champion.splashart, 'reference') }}" alt="{{ champion.name }}" class="card-img-top object-fit-cover" style="object-position: top;">
+                        </div>
+						<div class="card-body">
+							<h5 class="card-title text-white">{{ champion.name }}</h5>
+							<a href="{{champion.slug}}" class="btn btn-primary stretched-link">{{'button.details'|trans}}</a>
+						</div>
+					</div>
+				</div>
+			{% endfor %}
+		</div>
+	</div>
+{% endblock %}

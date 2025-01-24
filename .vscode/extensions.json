@@ -1,0 +1,12 @@
+{
+    "recommendations": [
+        "esbenp.prettier-vscode",
+        "mrmlnc.vscode-scss",
+        "mikestead.dotenv",
+        "alefragnani.bookmarks",
+        "editorconfig.editorconfig",
+        "eamodio.gitlens",
+        "junstyle.php-cs-fixer",
+        "breezelin.phpstan"
+    ]
+}

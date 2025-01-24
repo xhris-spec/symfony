@@ -1,0 +1,22 @@
+# Read the documentation: https://symfony.com/doc/current/bundles/FOSCKEditorBundle/index.html
+
+twig:
+    form_themes:
+        - '@FOSCKEditor/Form/ckeditor_widget.html.twig'
+
+fos_ck_editor:
+    auto_inline: false
+    default_config: configckeditorNano
+    configs:
+        configckeditorNano:
+            toolbar: [['Bold', 'Italic', 'Underline']]
+            uiColor: "#ffffff"
+            height: 240
+        configckeditorNanoList:
+            toolbar: [['Bold', 'Italic', 'Underline'], ['BulletedList', 'NumberedList']]
+            uiColor: "#ffffff"
+            height: 240
+        configckeditorPico:
+            toolbar: [['Bold', 'Italic', 'Underline']]
+            uiColor: "#ffffff"
+            height: 120

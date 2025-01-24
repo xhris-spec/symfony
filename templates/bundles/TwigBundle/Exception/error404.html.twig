@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+{% block meta_title %}Error{% endblock %}
+{% block stylesheets %}
+	{{ encore_entry_link_tags('app') }}
+	<style>
+		body {
+			margin: 0;
+			padding: 0;
+			font-family: sans-serif;
+			background-color: #f0f0f0;
+		}
+
+		.container {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			height: 100vh;
+			text-align: center;
+		}
+
+		p {
+			font-family: 'Merriweather', serif;
+			font-size: 1.3rem;
+			color: black;
+			padding: 1rem;
+		}
+		span {
+			white-space: nowrap;
+		}
+	</style>
+{% endblock %}
+{% block body %}
+	<div class="container">
+		<div>
+			<p>
+				<span>ERROR: 404</span><br>
+				<span>{{ 'error.not_found'|trans }}</span>
+			</p>
+		</div>
+	</div>
+{% endblock %}

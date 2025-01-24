@@ -1,0 +1,15 @@
+champion:
+    description: Descripción del campeon
+    position: Rol
+
+button:
+    hide_video: Ocultar video
+    show_video: Mostrar video
+    details: Mostrar detalles
+
+error:
+    not_found: Campeón no encontrado
+    exception: Se ha producido un error
+
+
+

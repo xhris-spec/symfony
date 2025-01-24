@@ -1,0 +1,77 @@
+{% block slug_widget %}
+    {% set field_from = field_from|default(null) %}
+    {% if field_from is empty %}
+        <span class="badge badge-danger">Error</span>
+    {% else %}
+        {% set value_initial = value %}
+        {% set global_id = id|replace({'_slug': ''}) %}
+        {% set field_from_text = (field_from_text|default(field_from))|capitalize %}
+        {% set field_from = global_id ~ '_' ~ field_from %}
+        {% if value is empty %}
+            <input data-lock="0" type="text" style="background-color: #f9fafc;" class="form-control form-control-slug" id="{{ id }}" name="{{ full_name }}" value="{{ value }}" required />
+            <span class="help-block sonata-ba-field-help">
+                <i class="fa fa-info-circle"></i> Este campo es automático y se genera del campo <i>{{ field_from_text }}</i>
+            </span>
+        {% else %}
+            <table width="100%" border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td valign="top">
+                    <input data-lock="1" type="text" style="background-color: #f9fafc;" class="form-control form-control-slug" id="{{ id }}" name="{{ full_name }}" value="{{ value }}" required />
+                </td>
+                <td align="right" valign="top" width="190" style="padding-top: 5px;">
+                    <input id="{{ field_from }}_lock_check" type="checkbox" value="1" checked />
+                    <label for="{{ field_from }}_lock_check">Cambios bloqueados</label>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <span class="help-block sonata-ba-field-help">
+                        <i class="fa fa-info-circle"></i> <span id="{{ field_from }}_lock_message">Este campo está bloqueado y no se modificará, Google no aconseja el cambio de URLs indexadas.</span>
+                    </span>
+                </td>
+            </tr>
+            </table>
+        {% endif %}
+        <script>
+        var {{ field_from }}_interval = null
+        $(function(){
+            $('#{{ field_from }}_lock_check').on('ifChecked ifUnchecked', function(e){
+                if ($('#{{ field_from }}_lock_check').prop('checked')) {
+                    $('#{{ id }}').data('lock', 1);
+                    $('#{{ id }}').val('{{ value_initial }}');
+                    $('#{{ field_from }}_lock_message').html('Este campo está bloqueado y no se modificará, Google no aconseja el cambio de URLs indexadas.');
+                } else {
+                    $('#{{ id }}').data('lock', 0);
+                    $('#{{ field_from }}').trigger('input');
+                    $('#{{ field_from }}_lock_message').html('Este campo es automático y se genera del campo "{{ field_from_text }}"');
+                }
+            });
+            $('.form-control-slug').on('focus', function(e){
+                e.preventDefault();
+                $('#{{ field_from }}').focus();
+            });
+            $('#{{ field_from }}').on('input', function(e){
+                var lock = parseInt($('#{{ id }}').data('lock'));
+                if (0 === lock) {
+                    var value = $(this).val();
+                    if ({{ field_from }}_interval) {
+                        clearInterval({{ field_from }}_interval);
+                    }
+                    if (value) {
+                        {{ field_from }}_interval = setTimeout(function(){
+                            $('#{{ id }}').val('...');
+                            $.getJSON('/slugify/' + value, function(data){
+                                if (data && data.slug) {
+                                    $('#{{ id }}').val(data.slug);
+                                }
+                            });
+                        }, 500);
+                    } else {
+                        $('#{{ id }}').val('');
+                    }
+                }
+            });
+        });
+        </script>
+    {% endif %}
+{% endblock %}
