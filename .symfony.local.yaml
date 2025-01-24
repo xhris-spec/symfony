@@ -1,7 +1,7 @@
 http:
     document_root: public/
     passthru: index.php
-    port: 8003
+    port: 8000
     allow_http: true
     no_tls: true
     daemon: false
