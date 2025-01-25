@@ -5,6 +5,15 @@
   "prefer-stable": true,
   "require": {
     "php": ">=8.1",
+    "ext-bz2": "*",
+    "ext-curl": "*",
+    "ext-ffi": "*",
+    "ext-fileinfo": "*",
+    "ext-gd": "*",
+    "ext-intl": "*",
+    "ext-mbstring": "*",
+    "ext-openssl": "*",
+    "ext-pdo_mysql": "*",
     "ext-ctype": "*",
     "ext-iconv": "*",
     "a2lix/translation-form-bundle": "^3.2",
@@ -42,16 +51,7 @@
     "symfony/yaml": "6.3.*",
     "twbs/bootstrap-icons": "^1.11",
     "twig/extra-bundle": "^2.12|^3.0",
-    "twig/twig": "^2.12|^3.0",
-    "ext-bz2": "*",
-    "ext-curl": "*",
-    "ext-ffi": "*",
-    "ext-fileinfo": "*",
-    "ext-gd": "*",
-    "ext-intl": "*",
-    "ext-mbstring": "*",
-    "ext-openssl": "*",
-    "ext-pdo_mysql": "*"
+    "twig/twig": "^2.12|^3.0"
   },
   "config": {
     "allow-plugins": {
