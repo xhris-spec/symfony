@@ -93,7 +93,8 @@
     ],
     "post-update-cmd": [
       "@auto-scripts",
-      "@hooks"
+      "@hooks",
+      "composer install --ignore-platform-req=ext-ffi --ignore-platform-req=ext-gd --ignore-platform-req=ext-intl"
     ],
     "database": [
       "php bin/console doctrine:database:create --if-not-exists --ansi"
